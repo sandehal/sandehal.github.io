@@ -1,0 +1,302 @@
+/* General body styling */
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 0;
+    padding: 0;
+    background: linear-gradient(to right, #ffffff 0%, #b4bdcc 50%);
+  }
+  
+  /* Everything related to the sidebar */
+  .sidebar {
+    height: 100vh; /* 100% of the viewport height */
+    width: 250px; /* Width of the sidebar */
+    position: fixed;
+    left: 0;
+    top: 0;
+    background: linear-gradient(to bottom, #0046b6 0%, #050404 100vh);
+    color: #fff; /* White text color */
+    transition: width 300ms ease-in-out;
+    overflow-x: hidden;
+  }
+  
+  /* Sidebar links */
+  .sidebar a {
+    display: block;
+    padding: 16px;
+    text-decoration: none;
+    color: #ffffff; /* Light grey text color */
+    font-size: 18px;
+    transition: all 300ms ease-in-out;
+  }
+  
+  /* Sidebar link hover effect */
+  .sidebar a:hover {
+    background: #575757; /* Slightly darker grey background */
+    color: #fff;
+    padding-left: 30px; /* Slightly indent the link on hover */
+  }
+  
+  /* Active state for current page link (optional) */
+  .sidebar a.active {
+    background: #000000; /* Modify with your brand color */
+    color: #fff;
+    padding-left: 16px;
+  }
+  
+  /* Main content style */
+  .content {
+    margin-left: 250px; /* Adjust to sidebar width */
+    padding: 20px;
+  }
+  
+  /* Media query for screens smaller than 768px, making the sidebar take the full width of the screen */
+  @media screen and (max-width: 767px) {
+    .sidebar {
+      width: 100%;
+    }
+    .content {
+      margin-left: 0;
+    }
+  }
+  
+  /* Modernize the rest of the content with updated font style */
+  h1, h2, h3, h4, h5, h6, p {
+    margin: 0;
+    padding: 0.5em 0;
+  }
+
+  /* Active link */
+.nav-link.active {
+    background: #575757;
+    color: #fff;
+  }
+
+
+  
+  .about-container {
+    max-width: 960px;
+    margin: 0 auto;
+    padding: 40px;
+    background: #f9f9f9;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+  }
+  
+  .about-container h2 {
+    color: #333;
+    margin-bottom: 20px;
+  }
+  
+  .about-image {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    object-fit: cover;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  }
+  
+  .about-text {
+    color: #555;
+    line-height: 1.6;
+    text-align: center;
+    max-width: 600px;
+  }
+  
+  .about-text p {
+    margin-bottom: 15px;
+  }
+  
+  .about-text strong {
+    color: #333;
+  }
+  
+  /* Responsive behavior */
+  @media (max-width: 768px) {
+    .about-container {
+      padding: 20px;
+    }
+    
+    .about-text {
+      max-width: 100%;
+    }
+  }
+
+
+  .project-container {
+    max-width: 960px;
+    margin: 40px auto;
+    padding: 20px;
+  }
+  
+  .project {
+    background: #fff;
+    border-radius: 6px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    margin-bottom: 40px;
+    position: relative; /* Allows for positioning of child elements relative to this container */
+    overflow: hidden; /* Ensures nothing extends beyond the border of the card */
+  }
+  
+  .project h3 {
+    position:relative;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    padding: 16px;
+    background: linear-gradient(to bottom, #0046b6 0%, #050404 200%);
+    color: #fff;
+    margin: 0;
+  }
+
+  .status-circle {
+    width: 16px; /* Size of the status circle */
+    height: 16px; /* Size of the status circle */
+    border-radius: 50%; /* Make it perfectly round */
+    display: inline-block;
+    margin-left: 8px; /* Space between the title and the status circle */
+  }
+  
+  /* Color coding for the status circle based on data-status attribute */
+  .status-circle[data-status="active"] {
+    background-color: green;
+  }
+  
+  .status-circle[data-status="in-progress"] {
+    background-color: yellow;
+  }
+
+  /* .status-circle[data-status="completed"] {
+    background-color: blue;
+  } */
+
+  .status-circle[data-status="completed"]::after {
+    content: "\2713"; /* Unicode for checkmark */
+    color: rgb(21, 255, 0); /* Color of the checkmark */
+    font-size: 24px; /* Adjust size as necessary */
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%); /* Center the checkmark inside the circle */
+  }
+
+  .project-image-background {
+    position: relative; /* Establishes a containing block for absolute positioning */
+    display: flex; /* Centering the image if needed */
+    justify-content: center;
+  }
+
+  .project-image-container {
+    position: relative;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    overflow: hidden;
+
+
+    /* background: url('../images/Projects/Mobile_FMC_zibo_xp11/wideSky.jpg') no-repeat center center;
+    background-size: cover; */
+  }
+
+
+  /* .background-image {
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-size: cover;
+    opacity: 0.5;
+    z-index: -1;
+  } */
+
+  .background-overlay {
+    position:absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    background-position: center;
+    filter: blur(10px);
+    z-index: 0;
+  }
+
+
+  .project-image {
+    position: relative;
+    width: 40%;
+    height: auto;
+    max-height: 500px;
+    max-width: 500px;
+    margin: 0 auto;
+    display: block;
+    z-index: 1;
+
+    /* design */
+    /* box-shadow: 0 50px 4px rgba(0, 0, 0, 0.1); Adjust shadow size and color */
+    /* Your existing styles */
+    
+    border-radius: 12px; /* Adjust the radius to your preference */
+
+    /* Animation */
+    transition: transform 0.3s ease-in-out; /* Smooth transition for the transform property */
+  }
+
+  .project-image:hover {
+    transform: scale(1.2); /* Slightly increase size on hover */
+  }
+  
+  .project-description {
+    padding: 16px;
+    line-height: 1.6;
+    color: #333;
+    position: relative;
+    z-index: 2; /* Ensures the text is above the background image */
+  }
+  
+  .project-link {
+    display: inline-block;
+    margin: 8px 16px 16px 16px;
+    padding: 10px 15px;
+    background-color: #007bff; /* Match this to the color used in .project h3 for consistency */
+    color: #fff;
+    text-decoration: none;
+    border-radius: 4px;
+    transition: background-color 0.3s;
+  }
+  
+  .project-link:hover {
+    background-color: #0056b3; /* A shade darker for hover effect */
+  }
+
+  @media only screen and (max-width: 768px) {
+    .project-container {
+      margin: 20px;
+      padding: 10px;
+    }
+    .project-description {
+      padding: 8px;
+    }
+  }
+
+    .social-links {
+      margin-top: 10px;
+  }
+
+  .social-links a {
+      text-decoration: none;
+      color: #333;
+      margin-right: 10px;
+      font-size: 1.5em;
+      transition: color 0.3s ease;
+  }
+
+  .social-links a:hover {
+      color: #0073b1; /* LinkedIn color as an example */
+  }
+
