@@ -18,6 +18,17 @@ body {
     transition: width 300ms ease-in-out;
     overflow-x: hidden;
   }
+
+  /* Responsive adjustments for smaller screens */
+@media (max-width: 768px) {
+  .sidebar {
+    width: 100%; /* Full width for small screens or a smaller percentage/width */
+    height: auto; /* Automatic height */
+    position: relative; /* Relative positioning */
+  }
+
+  /* Additional styles for the sidebar links and other elements on mobile */
+}
   
   /* Sidebar links */
   .sidebar a {
