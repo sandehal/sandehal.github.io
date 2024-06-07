@@ -31,16 +31,18 @@ body {
   
   /* Sidebar link hover effect */
   .sidebar a:hover {
-    background: #575757; /* Slightly darker grey background */
+    background: #001683; /* Slightly darker grey background */
     color: #fff;
     padding-left: 30px; /* Slightly indent the link on hover */
   }
   
   /* Active state for current page link (optional) */
   .sidebar a.active {
-    background: #000000; /* Modify with your brand color */
+    background: linear-gradient(to bottom, #0046b6 0%, #050404 200%); /* Dark blue background */
     color: #fff;
     padding-left: 16px;
+    /* add a frame */
+    border-left: 5px solid #000000; /* Blue border on the left side of the active link */
   }
   
   /* Main content style */
